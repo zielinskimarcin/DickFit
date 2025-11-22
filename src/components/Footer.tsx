@@ -1,0 +1,54 @@
+import { Dumbbell, Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+
+export function Footer() {
+  return (
+    <footer className="bg-black border-t border-gray-800">
+      <div className="max-w-7xl mx-auto px-6 py-12">
+        <div className="grid md:grid-cols-4 gap-12 mb-12">
+          <div className="md:col-span-2">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-10 h-10 rounded-xl bg-purple-600 flex items-center justify-center">
+                <Dumbbell className="w-6 h-6 text-white" />
+              </div>
+              <span className="text-white text-xl">DickFit</span>
+            </div>
+            <p className="text-gray-400 mb-6 max-w-md">
+              Profesjonalna siłownia dla tych, którzy chcą osiągnąć więcej. Push Hard. Laugh Harder.
+            </p>
+            <div className="flex gap-4">
+              {[Facebook,Instagram,Twitter,Youtube].map((Icon, i)=>(
+                <a key={i} href="#" className="w-10 h-10 rounded-lg bg-gray-800 hover:bg-purple-600 flex items-center justify-center transition-colors">
+                  <Icon className="w-5 h-5 text-white" />
+                </a>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h3 className="text-white mb-4">Szybkie Linki</h3>
+            <ul className="space-y-3">
+              {["O Nas","Cennik","Galeria","Blog"].map((t,i)=>(
+                <li key={i}><a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">{t}</a></li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-white mb-4">Kontakt</h3>
+            <ul className="space-y-3 text-gray-400">
+              <li>ul. Mięśniowa 42</li>
+              <li>00-001 Warszawa</li>
+              <li>+48 123 456 789</li>
+              <li>kontakt@dickfit.pl</li>
+            </ul>
+          </div>
+        </div>
+        <div className="pt-8 border-top border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-gray-400 text-sm">© 2025 DickFit. Wszystkie prawa zastrzeżone.</p>
+          <div className="flex gap-6 text-sm">
+            <a href="/data/Informacje_o_Silowni_DickFit.pdf" className="text-gray-400 hover:text-purple-400 transition-colors">Polityka Prywatności</a>
+            <a href="/data/Regulamin_Silowni_DickFit_PL.pdf" className="text-gray-400 hover:text-purple-400 transition-colors">Regulamin</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
